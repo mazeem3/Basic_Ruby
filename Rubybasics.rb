@@ -37,7 +37,7 @@ puts msg.upcase == "HELLO"
 
 
 print "12. "
-puts msg == "HeLLo"
+puts msg.tr('hEllO','HeLLo')== "HeLLo"
 
 print "13. "
 puts msg.reverse == "OllEh"
@@ -54,22 +54,25 @@ print "15. "
 puts 3 == arr.count
 
 print "16. "
-puts arr.include? == 'a,b,c'
+arr.insert(3,'a,b,c')
+puts arr[3] == 'a,b,c'
 
 #Hint: This will take 2 method calls
 print "17. "
-puts arr == 'C'
+arr.map!(&:upcase)
+puts arr[2] == 'C'
 
 hsh = { name: 'Fido', age: '99' }
 print "18. "
-puts  hsh == 'Fido'
+puts  hsh[:name] == 'Fido'
 
 print "19. "
-puts hsh == [:name, :age]
+puts hsh.keys == [:name, :age]
 
 print "20. "
-puts hsh == ['Fido', '99']
+puts hsh.values == ['Fido', '99']
 
 
 print "21. "
+hsh[:special]='Dog'
 puts hsh == { name: 'Fido', age: '99', special: 'Dog' }
